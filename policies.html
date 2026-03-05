@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policies | Cyber Security</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .accordion-button::after {
+            content: '\f107';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            float: right;
+        }
+        .accordion-button.collapsed::after {
+            content: '\f105';
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header (same) -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 rounded-full flex items-center justify-center text-white text-xl font-bold"><img src="image/cu-logo.png" alt=""></div>
+                <div>
+                    <span class="text-2xl font-extrabold text-blue-900">Chrisland <span class="text-cyan-600">University</span></span>
+                    <span class="block text-xs text-gray-500">Abeokuta, Nigeria</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-gray-700 font-medium">
+                <a href="index.html" class="hover:text-cyan-600">Home</a>
+                <a href="courses.html" class="hover:text-cyan-600">Courses</a>
+                <a href="about.html" class="hover:text-cyan-600">About</a>
+                <a href="policies.html" class="text-cyan-600 border-b-2 border-cyan-600 pb-1">Policies</a>
+                <a href="contact.html" class="hover:text-cyan-600">Contact</a>
+            </nav>
+            <button class="md:hidden text-2xl" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 py-4 shadow-lg">
+            <a href="index.html" class="block py-2 hover:text-cyan-600">Home</a>
+            <a href="courses.html" class="block py-2 hover:text-cyan-600">Courses</a>
+            <a href="about.html" class="block py-2 hover:text-cyan-600">About</a>
+            <a href="policies.html" class="block py-2 text-cyan-600">Policies</a>
+            <a href="contact.html" class="block py-2 hover:text-cyan-600">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <h1 class="text-4xl font-bold text-blue-900 mb-2">Student Policies <span class="text-cyan-600">& Regulations</span></h1>
+        <p class="text-gray-600 mb-8">All students are expected to adhere to the following rules and regulations as outlined in the student handbook.</p>
+
+        <div class="space-y-4 max-w-4xl mx-auto">
+            <!-- Dress Code -->
+            <div class="bg-white rounded-xl shadow overflow-hidden">
+                <button class="accordion-button w-full text-left p-5 bg-gray-100 hover:bg-gray-200 font-semibold text-lg flex justify-between items-center" onclick="toggleAccordion(this)">
+                    <span><i class="fas fa-tshirt text-cyan-600 mr-2"></i> Dress Code</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content p-5 hidden">
+                    <h4 class="font-bold mt-2">General</h4>
+                    <p>All students must dress corporate except in halls of residence or during sports. Appearance must be neat, pure, and simple, conforming to Christian values. Tattooing is prohibited. Face caps are not allowed in lecture halls.</p>
+                    <h4 class="font-bold mt-4">Female Students</h4>
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li>No sexually provocative dressing (chest, navel, thigh covered).</li>
+                        <li>Faces fully visible.</li>
+                        <li>Skirts must cover knees, not slit above.</li>
+                        <li>No transparent/sheer blouses.</li>
+                        <li>No low necklines; shoulders covered.</li>
+                        <li>No shorts/slacks outside residence (except field trips).</li>
+                        <li>Trouser suits allowed with modest camisole.</li>
+                        <li>No excessive makeup, multi‑coloured nails, artificial nails, bleaching.</li>
+                        <li>Hair attachments not beyond neck‑length, natural colour.</li>
+                        <li>Jewelry moderate; no noisy shoes.</li>
+                    </ul>
+                    <h4 class="font-bold mt-4">Male Students</h4>
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li>Attire for lectures: trousers (not jeans), shirt and tie.</li>
+                        <li>Not bare‑footed or shirtless.</li>
+                        <li>Proper sports uniforms during activities.</li>
+                        <li>No muscle tops, earrings, necklaces.</li>
+                        <li>Hair short, neat; beard clean shaven.</li>
+                    </ul>
+                    <p class="mt-2 text-red-600"><span class="font-semibold">Sanctions:</span> First offence – strong reprimand; second – community service; third – rustication one semester.</p>
+                </div>
+            </div>
+
+            <!-- Examination Rules -->
+            <div class="bg-white rounded-xl shadow overflow-hidden">
+                <button class="accordion-button w-full text-left p-5 bg-gray-100 hover:bg-gray-200 font-semibold text-lg flex justify-between items-center" onclick="toggleAccordion(this)">
+                    <span><i class="fas fa-pencil-alt text-cyan-600 mr-2"></i> Examination Regulations</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content p-5 hidden">
+                    <h4 class="font-bold">Eligibility</h4>
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li>80% lecture attendance required.</li>
+                        <li>No absence >3 weeks without permission.</li>
+                    </ul>
+                    <h4 class="font-bold mt-4">Instructions to Candidates</h4>
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li>University ID and Examination card required.</li>
+                        <li>No incriminating materials on person or desk.</li>
+                        <li>No GSM or electronic devices in hall.</li>
+                        <li>No leaving during first and last 30 minutes.</li>
+                        <li>Only non‑programmable calculators allowed.</li>
+                        <li>Silence must be observed.</li>
+                    </ul>
+                    <h4 class="font-bold mt-4">Examination Misconduct</h4>
+                    <p class="mb-2">Offences include possession of unauthorized materials, swapping answers, impersonation, assault, etc. Penalties range from reprimand to expulsion.</p>
+                    <table class="w-full text-sm border">
+                        <thead><tr class="bg-blue-900 text-white"><th>Offence</th><th>Punishment</th></tr></thead>
+                        <tbody>
+                            <tr><td>Non-display of ID card</td><td>Reprimand/Suspension</td></tr>
+                            <tr><td>Noise making</td><td>Strong reprimand/Suspension</td></tr>
+                            <tr><td>Refusal to submit for search</td><td>Rustication one semester</td></tr>
+                            <tr><td>Use of scrap papers with notes</td><td>Rustication/Expulsion</td></tr>
+                            <tr><td>Possession of University answer sheets</td><td>Expulsion</td></tr>
+                            <tr><td>Communication during exam</td><td>Rustication one semester</td></tr>
+                            <tr><td>Impersonation</td><td>Expulsion</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Code of Conduct -->
+            <div class="bg-white rounded-xl shadow overflow-hidden">
+                <button class="accordion-button w-full text-left p-5 bg-gray-100 hover:bg-gray-200 font-semibold text-lg flex justify-between items-center" onclick="toggleAccordion(this)">
+                    <span><i class="fas fa-gavel text-cyan-600 mr-2"></i> Code of Conduct</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content p-5 hidden">
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li>Respect for university officials at all times.</li>
+                        <li>No disrespectful or insulting letters.</li>
+                        <li>Orderly behaviour in classrooms, library, and around campus.</li>
+                        <li>Adherence to library rules (silence, no food, bag inspection).</li>
+                        <li>Registration and matriculation mandatory.</li>
+                        <li>Any student who writes an insulting letter to an official is subject to disciplinary action.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Health Services -->
+            <div class="bg-white rounded-xl shadow overflow-hidden">
+                <button class="accordion-button w-full text-left p-5 bg-gray-100 hover:bg-gray-200 font-semibold text-lg flex justify-between items-center" onclick="toggleAccordion(this)">
+                    <span><i class="fas fa-hospital text-cyan-600 mr-2"></i> Health Services</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content p-5 hidden">
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li>Every student must register with the University Health Centre.</li>
+                        <li>For any ailment, report at the University Health Centre first.</li>
+                        <li>Only the Director's report is acceptable for official purposes.</li>
+                        <li>Outside treatment must be endorsed by the Director.</li>
+                        <li>The university must be informed of any sickness during the session.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Library Rules -->
+            <div class="bg-white rounded-xl shadow overflow-hidden">
+                <button class="accordion-button w-full text-left p-5 bg-gray-100 hover:bg-gray-200 font-semibold text-lg flex justify-between items-center" onclick="toggleAccordion(this)">
+                    <span><i class="fas fa-book text-cyan-600 mr-2"></i> Library Rules</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content p-5 hidden">
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li>Silence must be observed; all handsets on silent.</li>
+                        <li>No library material taken out without signing.</li>
+                        <li>All materials must be returned promptly.</li>
+                        <li>No food or drink allowed.</li>
+                        <li>Bags and books inspected at security post when leaving.</li>
+                        <li>Library ID required for entry.</li>
+                        <li>Personal belongings (except purses, notebooks) deposited at property counter.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Probation and Withdrawal -->
+            <div class="bg-white rounded-xl shadow overflow-hidden">
+                <button class="accordion-button w-full text-left p-5 bg-gray-100 hover:bg-gray-200 font-semibold text-lg flex justify-between items-center" onclick="toggleAccordion(this)">
+                    <span><i class="fas fa-exclamation-triangle text-cyan-600 mr-2"></i> Probation & Withdrawal</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content p-5 hidden">
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li>GPA < 1.50 in one semester → probation.</li>
+                        <li>Two consecutive semesters with GPA < 1.50 → withdrawal from program.</li>
+                        <li>CGPA < 1.00 in two consecutive sessions → withdrawal from university.</li>
+                        <li>A student asked to withdraw may transfer to another programme if minimum requirements are met.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (same) -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white text-xl font-bold mb-4">Chrisland University</h3>
+                    <p class="text-sm">Abeokuta, Ogun State, Nigeria</p>
+                    <p class="text-sm mt-2">Email: info@chrislanduniversity.edu.ng</p>
+                    <p class="text-sm">Phone: +234 813 576 2586</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-cyan-400">Home</a></li>
+                        <li><a href="courses.html" class="hover:text-cyan-400">Courses</a></li>
+                        <li><a href="about.html" class="hover:text-cyan-400">About</a></li>
+                        <li><a href="policies.html" class="hover:text-cyan-400">Policies</a></li>
+                        <li><a href="contact.html" class="hover:text-cyan-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Programmes</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-cyan-400">Cyber Security (B.Sc.)</a></li>
+                        <li><a href="#" class="hover:text-cyan-400">Computer Science</a></li>
+                        <li><a href="#" class="hover:text-cyan-400">Software Engineering</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-cyan-400"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-2xl hover:text-cyan-400"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-2xl hover:text-cyan-400"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-2xl hover:text-cyan-400"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+                <p>&copy; 2025 Chrisland University. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i.fa-chevron-down, i.fa-chevron-right');
+            content.classList.toggle('hidden');
+            if (content.classList.contains('hidden')) {
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-right');
+            } else {
+                icon.classList.remove('fa-chevron-right');
+                icon.classList.add('fa-chevron-down');
+            }
+        }
+    </script>
+</body>
+</html>

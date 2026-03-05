@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses | Cyber Security</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .curriculum-tab-active {
+            background-color: #0891b2;
+            color: white;
+        }
+        .level-accordion {
+            transition: all 0.3s ease;
+        }
+        .semester-tab-active {
+            background-color: #1e3a8a;
+            color: white;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        td {
+            padding: 8px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        tr:hover {
+            background-color: #f1f5f9;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 rounded-full flex items-center justify-center text-white text-xl font-bold"><img src="image/cu-logo.png" alt=""></div>
+                <div>
+                    <span class="text-2xl font-extrabold text-blue-900">Chrisland <span class="text-cyan-600">University</span></span>
+                    <span class="block text-xs text-gray-500">Abeokuta, Nigeria</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-gray-700 font-medium">
+                <a href="index.html" class="hover:text-cyan-600">Home</a>
+                <a href="courses.html" class="text-cyan-600 border-b-2 border-cyan-600 pb-1">Courses</a>
+                <a href="about.html" class="hover:text-cyan-600">About</a>
+                <a href="policies.html" class="hover:text-cyan-600">Policies</a>
+                <a href="contact.html" class="hover:text-cyan-600">Contact</a>
+            </nav>
+            <button class="md:hidden text-2xl" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 py-4 shadow-lg">
+            <a href="index.html" class="block py-2 hover:text-cyan-600">Home</a>
+            <a href="courses.html" class="block py-2 text-cyan-600">Courses</a>
+            <a href="about.html" class="block py-2 hover:text-cyan-600">About</a>
+            <a href="policies.html" class="block py-2 hover:text-cyan-600">Policies</a>
+            <a href="contact.html" class="block py-2 hover:text-cyan-600">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <h1 class="text-4xl font-bold text-blue-900 mb-2">Cyber Security <span class="text-cyan-600">Curriculum</span></h1>
+        <p class="text-gray-600 mb-8">Chrisland University offers two curricula: the older BMAS and the updated CCMAS (as per NUC guidelines). Select a curriculum below, then choose a level to see semester-wise courses.</p>
+
+        <!-- Curriculum Tabs (BMAS / CCMAS) -->
+        <div class="flex space-x-2 mb-8">
+            <button id="tab-bmas" onclick="switchCurriculum('bmas')" class="curriculum-tab px-6 py-2 bg-gray-200 rounded-full font-medium hover:bg-cyan-600 hover:text-white transition curriculum-tab-active">BMAS (Old)</button>
+            <button id="tab-ccmas" onclick="switchCurriculum('ccmas')" class="curriculum-tab px-6 py-2 bg-gray-200 rounded-full font-medium hover:bg-cyan-600 hover:text-white transition">CCMAS (New)</button>
+        </div>
+
+        <!-- BMAS Curriculum (visible by default) -->
+        <div id="bmas-curriculum" class="curriculum">
+            <!-- Level 100 -->
+            <div class="mb-4 border rounded-lg overflow-hidden">
+                <button onclick="toggleLevel('bmas-100')" class="level-accordion w-full text-left p-4 bg-blue-100 hover:bg-blue-200 font-bold text-lg flex justify-between items-center">
+                    <span><i class="fas fa-chevron-down mr-2" id="icon-bmas-100"></i> 100 Level</span>
+                </button>
+                <div id="bmas-100" class="hidden p-4 bg-white">
+                    <!-- Semester tabs for 100 Level -->
+                    <div class="flex space-x-2 mb-4">
+                        <button onclick="showSemester('bmas-100-first', this)" class="semester-tab px-4 py-2 bg-gray-200 rounded-full text-sm font-medium semester-tab-active" data-level="bmas-100">First Semester</button>
+                        <button onclick="showSemester('bmas-100-second', this)" class="semester-tab px-4 py-2 bg-gray-200 rounded-full text-sm font-medium" data-level="bmas-100">Second Semester</button>
+                        <button onclick="showSemester('bmas-100-elective', this)" class="semester-tab px-4 py-2 bg-gray-200 rounded-full text-sm font-medium" data-level="bmas-100">Electives</button>
+                    </div>
+                    <!-- First Semester Table -->
+                    <div id="bmas-100-first" class="semester-content">
+                        <table class="w-full">
+                            <thead><tr><th>Code</th><th>Course Title</th><th>Status</th><th>Units</th></tr></thead>
+                            <tbody>
+                                <tr><td>CSC 101</td><td>Introduction to Computer Science</td><td>C</td><td>2</td></tr>
+                                <tr><td>CHM 101</td><td>General Chemistry I</td><td>C</td><td>3</td></tr>
+                                <tr><td>CHM 103</td><td>General Chemistry Practical I</td><td>C</td><td>1</td></tr>
+                                <tr><td>BIO 101</td><td>General Biology I</td><td>C</td><td>3</td></tr>
+                                <tr><td>BIO 103</td><td>General Biology Practical I</td><td>C</td><td>1</td></tr>
+                                <tr><td>GST 101</td><td>Communication in English I</td><td>C</td><td>2</td></tr>
+                                <tr><td>GST 107</td><td>Use of Library, Study Skills and ICT</td><td>C</td><td>2</td></tr>
+                                <tr><td>GST 111</td><td>Introduction to Music</td><td>C</td><td>0</td></tr>
+                                <tr><td>MTH 101</td><td>Elementary Mathematics I</td><td>C</td><td>3</td></tr>
+                                <tr><td>PHY 101</td><td>General Physics I</td><td>C</td><td>3</td></tr>
+                                <tr><td>PHY 107</td><td>General Physics Laboratory I</td><td>C</td><td>1</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Second Semester Table -->
+                    <div id="bmas-100-second" class="semester-content hidden">
+                        <table class="w-full">
+                            <thead><tr><th>Code</th><th>Course Title</th><th>Status</th><th>Units</th></tr></thead>
+                            <tbody>
+                                <tr><td>CYB 102</td><td>Fundamentals of Cyber security I</td><td>C</td><td>3</td></tr>
+                                <tr><td>CYB 104</td><td>Introduction to Web Technologies</td><td>C</td><td>2</td></tr>
+                                <tr><td>CSC 102</td><td>Introduction to Problem Solving</td><td>C</td><td>2</td></tr>
+                                <tr><td>MTH 102</td><td>Elementary Mathematics II</td><td>C</td><td>3</td></tr>
+                                <tr><td>MTH 104</td><td>Elementary Mathematics III</td><td>C</td><td>3</td></tr>
+                                <tr><td>PHY 102</td><td>General Physics II</td><td>C</td><td>3</td></tr>
+                                <tr><td>PHY 108</td><td>General Physics Laboratory II</td><td>C</td><td>1</td></tr>
+                                <tr><td>GST 102</td><td>Communication in English II</td><td>C</td><td>2</td></tr>
+                                <tr><td>GST 106</td><td>Logic, Philosophy and Human Existence</td><td>C</td><td>2</td></tr>
+                                <tr><td>GST 110</td><td>Contemporary Health Issues</td><td>C</td><td>2</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Electives Table for 100 Level -->
+                    <div id="bmas-100-elective" class="semester-content hidden">
+                        <p class="text-gray-600">No electives listed for 100 level in BMAS.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Level 200 -->
+            <div class="mb-4 border rounded-lg overflow-hidden">
+                <button onclick="toggleLevel('bmas-200')" class="level-accordion w-full text-left p-4 bg-blue-100 hover:bg-blue-200 font-bold text-lg flex justify-between items-center">
+                    <span><i class="fas fa-chevron-down mr-2" id="icon-bmas-200"></i> 200 Level</span>
+                </button>
+                <div id="bmas-200" class="hidden p-4 bg-white">
+                    <div class="flex space-x-2 mb-4">
+                        <button onclick="showSemester('bmas-200-first', this)" class="semester-tab px-4 py-2 bg-gray-200 rounded-full text-sm font-medium semester-tab-active" data-level="bmas-200">First Semester</button>
+                        <button onclick="showSemester('bmas-200-second', this)" class="semester-tab px-4 py-2 bg-gray-200 rounded-full text-sm font-medium" data-level="bmas-200">Second Semester</button>
+                        <button onclick="showSemester('bmas-200-elective', this)" class="semester-tab px-4 py-2 bg-gray-200 rounded-full text-sm font-medium" data-level="bmas-200">Electives</button>
+                    </div>
+                    <div id="bmas-200-first" class="semester-content">
+                        <table class="w-full">
+                            <thead><tr><th>Code</th><th>Title</th><th>Status</th><th>Units</th></tr></thead>
+                            <tbody>
+                                <tr><td>CYB 201</td><td>Fundamentals of Cyber security II</td><td>C</td><td>2</td></tr>
+                                <tr><td>CYB 203</td><td>Cyber security in Business and Industry</td><td>C</td><td>2</td></tr>
+                                <tr><td>CYB 205</td><td>Introduction to Digital Forensics</td><td>C</td><td>2</td></tr>
+                                <tr><td>CSC 201</td><td>Computer Programming I</td><td>C</td><td>3</td></tr>
+                                <tr><td>CSC 205</td><td>Operating Systems</td><td>C</td><td>3</td></tr>
+                                <tr><td>MTH 201</td><td>Mathematical Methods I</td><td>C</td><td>3</td></tr>
+                                <tr><td>MTH 205</td><td>Linear Algebra I</td><td>C</td><td>2</td></tr>
+                                <tr><td>MTH 211</td><td>Statistics for Physical Sciences & Engineering</td><td>C</td><td>3</td></tr>
+                                <tr><td>GST 205</td><td>Entrepreneurship Studies I</td><td>C</td><td>2</td></tr>
+                                <tr><td>GST 207</td><td>Nigeria's People, Culture, Government and Economy</td><td>C</td><td>2</td></tr>
+                                <tr><td>GST 211</td><td>Instrumentation in Music</td><td>C</td><td>0</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="bmas-200-second" class="semester-content hidden">
+                        <table class="w-full">
+                            <thead><tr><th>Code</th><th>Title</th><th>Status</th><th>Units</th></tr></thead>
+                            <tbody>
+                                <tr><td>CSC 204</td><td>Data Structures</td><td>C</td><td>3</td></tr>
+                                <tr><td>CSC 208</td><td>Discrete Structure</td><td>C</td><td>3</td></tr>
+                                <tr><td>CYB 202</td><td>System and Network Administration</td><td>C</td><td>3</td></tr>
+                                <tr><td>CYB 204</td><td>Computer Communications Networks</td><td>C</td><td>3</td></tr>
+                                <tr><td>CYB 206</td><td>Enterprise and Perimeter Security</td><td>C</td><td>2</td></tr>
+                                <tr><td>CYB 208</td><td>Information Security Policy</td><td>C</td><td>2</td></tr>
+                                <tr><td>GST 206</td><td>Entrepreneurship Studies II</td><td>C</td><td>2</td></tr>
+                                <tr><td>GST 204</td><td>Peace and Conflict Resolution</td><td>E</td><td>1</td></tr>
+                                <tr><td>GST 208</td><td>Communication in French I</td><td>E</td><td>1</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="bmas-200-elective" class="semester-content hidden">
+                        <p class="text-gray-600">Electives are listed at the end of the BMAS curriculum.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Level 300 -->
+            <div class="mb-4 border rounded-lg overflow-hidden">
+                <button onclick="toggleLevel('bmas-300')" class="level-accordion w-full text-left p-4 bg-blue-100 hover:bg-blue-200 font-bold text-lg flex justify-between items-center">
+                    <span><i class="fas fa-chevron-down mr-2" id="icon-bmas-300"></i> 300 Level</span>
+                </button>
+                <div id="bmas-300" class="hidden p-4 bg-white">
+                    <div class="flex space-x-2 mb-4">
+                        <button onclick="showSemester('bmas-300-first', this)" class="semester-tab px-4 py-2 bg-gray-200 rounded-full text-sm font-medium semester-tab-active" data-level="bmas-300">First Semester</button>
+                        <button onclick="showSemester('bmas-300-second', this)" class="semester-tab px-4 py-2 bg-gray-200 rounded-full text-sm font-medium" data-level="bmas-300">Second Semester</button>
+                        <button onclick="showSemester('bmas-300-elective', this)" class="semester-tab px-4 py-2 bg-gray-200 rounded-full text-sm font-medium" data-level="bmas-300">Electives</button>
+                    </div>
+                    <div id="bmas-300-first" class="semester-content">
+                        <table class="w-full">
+                            <thead><tr><th>Code</th><th>Title</th><th>Status</th><th>Units</th></tr></thead>
+                            <tbody>
+                                <tr><td>CYB 301</td><td>Software Defined Networks</td><td>C</td><td>2</td></tr>
+                                <tr><td>CYB 303</td><td>Cryptographic Techniques</td><td>C</td><td>2</td></tr>
+                                <tr><td>CYB 305</td><td>Biometrics Security</td><td>C</td><td>2</td></tr>
+                                <tr><td>CYB 307</td><td>Information Security Engineering</td><td>C</td><td>2</td></tr>
+                                <tr><td>CYB 309</td><td>Systems Security</td><td>C</td><td>2</td></tr>
+                                <tr><td>CYB 311</td><td>Cyber Law</td><td>C</td><td>1</td></tr>
+                                <tr><td>CSC 307</td><td>Computer Organization and Architecture</td><td>C</td><td>3</td></tr>
+                                <tr><td>CSC 309</td><td>Systems Analysis and Design</td><td>C</td><td>3</td></tr>
+                                <tr><td>CSC 313</td><td>Object-Oriented Programming</td><td>C</td><td>3</td></tr>
+                                <tr><td>GST 209</td><td>Morality, Religion, Ethics and Etiquette</td><td>C</td><td>1</td></tr>
+                                <tr><td>ENT 301</td><td>Entrepreneurship Studies III</td><td>C</td><td>2</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="bmas-300-second" class="semester-content hidden">
+                        <table class="w-full">
+                            <thead><tr><th>Code</th><th>Title</th><th>Status</th><th>Units</th></tr></thead>
+                            <tbody>
+                                <tr><td>CYB 399</td><td>SIWES</td><td>C</td><td>6</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="bmas-300-elective" class="semester-content hidden">
+                        <p class="text-gray-600">Electives are listed at the end of the BMAS curriculum.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Level 400 -->
+            <div class="mb-4 border rounded-lg overflow-hidden">
+                <button onclick="toggleLevel('bmas-400')" class="level-accordion w-full text-left p-4 bg-blue-100 hover:bg-blue-200 font-bold text-lg flex justify-between items-center">
+                    <span><i class="fas fa-chevron-down mr-2" id="icon-bmas-400"></i> 400 Level</span>
+                </button>
+                <div id="bmas-400" class="hidden p-4 bg-white">
+                    <div class="flex space-x-2 mb-4">
+                        <button onclick="showSemester('bmas-400-first', this)" class="semester-tab px-4 py-2 bg-gray-200 rounded-full text-sm font-medium semester-tab-active" data-level="bmas-400">First Semester</button>
+                        <button onclick="showSemester('bmas-400-second', this)" class="semester-tab px-4 py-2 bg-gray-200 rounded-full text-sm font-medium" data-level="bmas-400">Second Semester</button>
+                        <button onclick="showSemester('bmas-400-elective', this)" class="semester-tab px-4 py-2 bg-gray-200 rounded-full text-sm font-medium" data-level="bmas-400">Electives</button>
+                    </div>
+                    <div id="bmas-400-first" class="semester-content">
+                        <table class="w-full">
+                            <thead><tr><th>Code</th><th>Title</th><th>Status</th><th>Units</th></tr></thead>
+                            <tbody>
+                                <tr><td>CSC 401</td><td>Software Engineering</td><td>C</td><td>3</td></tr>
+                                <tr><td>CSC 407</td><td>Artificial Intelligence</td><td>C</td><td>2</td></tr>
+                                <tr><td>CSC 413</td><td>Algorithm and Complexity Analysis</td><td>C</td><td>3</td></tr>
+                                <tr><td>CYB 403</td><td>Systems Vulnerability Assessment and Testing</td><td>C</td><td>3</td></tr>
+                                <tr><td>CYB 405</td><td>Cloud Computing Security</td><td>C</td><td>2</td></tr>
+                                <tr><td>CYB 407</td><td>Information Disaster Recovery</td><td>C</td><td>2</td></tr>
+                                <tr><td>CYB 409</td><td>VoIP and Multimedia Security</td><td>C</td><td>2</td></tr>
+                                <tr><td>CYB 419</td><td>Database Management and Control Systems</td><td>C</td><td>2</td></tr>
+                                <tr><td>LDS 401</td><td>Leadership Studies</td><td>C</td><td>1</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="bmas-400-second" class="semester-content hidden">
+                        <table class="w-full">
+                            <thead><tr><th>Code</th><th>Title</th><th>Status</th><th>Units</th></tr></thead>
+                            <tbody>
+                                <tr><td>CYB 404</td><td>Cryptography: Algorithms and Applications</td><td>C</td><td>3</td></tr>
+                                <tr><td>CYB 408</td><td>Information Security Risk Analysis and Management</td><td>C</td><td>2</td></tr>
+                                <tr><td>CYB 410</td><td>Ethical Hacking and Reverse Engineering</td><td>C</td><td>2</td></tr>
+                                <tr><td>CYB 412</td><td>Special Topics on Information Security</td><td>C</td><td>2</td></tr>
+                                <tr><td>CSC 414</td><td>Modelling and Simulation</td><td>C</td><td>3</td></tr>
+                                <tr><td>CYB 499</td><td>Final Year Student's Project</td><td>C</td><td>6</td></tr>
+                                <tr><td>ENT 302</td><td>Entrepreneurship Skills</td><td>C</td><td>2</td></tr>
+                                <tr><td>GST 308</td><td>Communication in French II</td><td>C</td><td>1</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="bmas-400-elective" class="semester-content hidden">
+                        <h3 class="font-bold mb-2">BMAS Electives</h3>
+                        <table class="w-full">
+                            <thead><tr><th>Code</th><th>Course Title</th><th>Units</th></tr></thead>
+                            <tbody>
+                                <tr><td>CYB 401E</td><td>Security Strategies for Web Application and Social Networks</td><td>2</td></tr>
+                                <tr><td>CYB 411E</td><td>Forensic Analysis</td><td>2</td></tr>
+                                <tr><td>CYB 413E</td><td>Enterprise Security and Information Assurance</td><td>2</td></tr>
+                                <tr><td>CYB 415E</td><td>Application Security</td><td>2</td></tr>
+                                <tr><td>CYB 417E</td><td>Threats, Exploits and Countermeasures</td><td>2</td></tr>
+                                <tr><td>CYB 402E</td><td>Fault Tolerant Computing</td><td>2</td></tr>
+                                <tr><td>CYB 414E</td><td>Information Security Models</td><td>2</td></tr>
+                                <tr><td>CYB 416E</td><td>Privacy in a Networked World</td><td>2</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CCMAS Curriculum (hidden by default) -->
+        <div id="ccmas-curriculum" class="curriculum hidden">
+            <!-- Level 100 CCMAS -->
+            <div class="mb-4 border rounded-lg overflow-hidden">
+                <button onclick="toggleLevel('ccmas-100')" class="level-accordion w-full text-left p-4 bg-blue-100 hover:bg-blue-200 font-bold text-lg flex justify-between items-center">
+                    <span><i class="fas fa-chevron-down mr-2" id="icon-ccmas-100"></i> 100 Level (CCMAS)</span>
+                </button>
+                <div id="ccmas-100" class="hidden p-4 bg-white">
+                    <div class="flex space-x-2 mb-4">
+                        <button onclick="showSemester('ccmas-100-first', this)" class="semester-tab px-4 py-2 bg-gray-200 rounded-full text-sm font-medium semester-tab-active" data-level="ccmas-100">First Semester</button>
+                        <button onclick="showSemester('ccmas-100-second', this)" class="semester-tab px-4 py-2 bg-gray-200 rounded-full text-sm font-medium" data-level="ccmas-100">Second Semester</button>
+                        <button onclick="showSemester('ccmas-100-elective', this)" class="semester-tab px-4 py-2 bg-gray-200 rounded-full text-sm font-medium" data-level="ccmas-100">Electives</button>
+                    </div>
+                    <div id="ccmas-100-first" class="semester-content">
+                        <table class="w-full">
+                            <thead><tr><th>Code</th><th>Course Title</th><th>Status</th><th>Units</th></tr></thead>
+                            <tbody>
+                                <tr><td>CLU-CSC 103</td><td>Computer Hardware and Maintenance</td><td>C</td><td>3</td></tr>
+                                <tr><td>MTH 101</td><td>Elementary Mathematics I</td><td>C</td><td>2</td></tr>
+                                <tr><td>PHY 101</td><td>General Physics I</td><td>C</td><td>2</td></tr>
+                                <tr><td>PHY 107</td><td>General Practical Physics I</td><td>C</td><td>1</td></tr>
+                                <tr><td>STA 111</td><td>Descriptive Statistics</td><td>C</td><td>3</td></tr>
+                                <tr><td>COS 101</td><td>Introduction to Computing Sciences</td><td>C</td><td>3</td></tr>
+                                <tr><td>GST 101</td><td>Communication in English I</td><td>C</td><td>2</td></tr>
+                                <tr><td>GST 107</td><td>Use of Library, Study Skills and ICT</td><td>C</td><td>2</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="ccmas-100-second" class="semester-content hidden">
+                        <table class="w-full">
+                            <thead><tr><th>Code</th><th>Course Title</th><th>Status</th><th>Units</th></tr></thead>
+                            <tbody>
+                                <tr><td>CLU-CYB 132</td><td>System and Network Administration</td><td>C</td><td>3</td></tr>
+                                <tr><td>CLU-CSC 134</td><td>Web Programming 1</td><td>C</td><td>3</td></tr>
+                                <tr><td>MTH 102</td><td>Elementary Mathematics II</td><td>C</td><td>2</td></tr>
+                                <tr><td>PHY 102</td><td>General Physics II</td><td>C</td><td>2</td></tr>
+                                <tr><td>PHY 108</td><td>General Practical Physics II</td><td>C</td><td>1</td></tr>
+                                <tr><td>COS 102</td><td>Introduction to Problem Solving</td><td>C</td><td>3</td></tr>
+                                <tr><td>GST 102</td><td>Communication in English II</td><td>C</td><td>2</td></tr>
+                                <tr><td>GST 110</td><td>Contemporary Health Issues</td><td>C</td><td>2</td></tr>
+                                <tr><td>GST 112</td><td>Nigerian Peoples and Culture</td><td>C</td><td>2</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="ccmas-100-elective" class="semester-content hidden">
+                        <p class="text-gray-600">No electives listed for 100 level in CCMAS.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Level 200 CCMAS -->
+            <div class="mb-4 border rounded-lg overflow-hidden">
+                <button onclick="toggleLevel('ccmas-200')" class="level-accordion w-full text-left p-4 bg-blue-100 hover:bg-blue-200 font-bold text-lg flex justify-between items-center">
+                    <span><i class="fas fa-chevron-down mr-2" id="icon-ccmas-200"></i> 200 Level (CCMAS)</span>
+                </button>
+                <div id="ccmas-200" class="hidden p-4 bg-white">
+                    <div class="flex space-x-2 mb-4">
+                        <button onclick="showSemester('ccmas-200-first', this)" class="semester-tab px-4 py-2 bg-gray-200 rounded-full text-sm font-medium semester-tab-active" data-level="ccmas-200">First Semester</button>
+                        <button onclick="showSemester('ccmas-200-second', this)" class="semester-tab px-4 py-2 bg-gray-200 rounded-full text-sm font-medium" data-level="ccmas-200">Second Semester</button>
+                        <button onclick="showSemester('ccmas-200-elective', this)" class="semester-tab px-4 py-2 bg-gray-200 rounded-full text-sm font-medium" data-level="ccmas-200">Electives</button>
+                    </div>
+                    <div id="ccmas-200-first" class="semester-content">
+                        <table class="w-full">
+                            <thead><tr><th>Code</th><th>Course Title</th><th>Status</th><th>Units</th></tr></thead>
+                            <tbody>
+                                <tr><td>CLU-CYB 211</td><td>Internet of Things</td><td>C</td><td>3</td></tr>
+                                <tr><td>CLU-CYB 231</td><td>Network Security and Policy</td><td>C</td><td>3</td></tr>
+                                <tr><td>COS 201</td><td>Computer Programming I</td><td>C</td><td>3</td></tr>
+                                <tr><td>CYB 201</td><td>Introduction to Cybersecurity and Strategy</td><td>C</td><td>2</td></tr>
+                                <tr><td>CYB 203</td><td>Cybercrime, Law and Countermeasures</td><td>C</td><td>2</td></tr>
+                                <tr><td>SEN 201</td><td>Introduction to Software Engineering</td><td>C</td><td>2</td></tr>
+                                <tr><td>GST 205</td><td>Entrepreneurship Studies I</td><td>C</td><td>2</td></tr>
+                                <tr><td>GST 207</td><td>Nigeria's People, Culture, Government and Economy</td><td>C</td><td>2</td></tr>
+                                <tr><td>GST 209</td><td>Morality, Religion, Ethics and Etiquette</td><td>C</td><td>1</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="ccmas-200-second" class="semester-content hidden">
+                        <table class="w-full">
+                            <thead><tr><th>Code</th><th>Course Title</th><th>Status</th><th>Units</th></tr></thead>
+                            <tbody>
+                                <tr><td>CLU-CYB 230</td><td>Cloud Computing Security</td><td>C</td><td>3</td></tr>
+                                <tr><td>CLU-CYB 232</td><td>Data Privacy</td><td>C</td><td>3</td></tr>
+                                <tr><td>CLU-CYB 234</td><td>Internet and Web Programming</td><td>C</td><td>3</td></tr>
+                                <tr><td>COS 202</td><td>Computer Programming II</td><td>C</td><td>3</td></tr>
+                                <tr><td>INS 204</td><td>Systems Analysis and Design</td><td>C</td><td>2</td></tr>
+                                <tr><td>CYB 202</td><td>Biometrics Security</td><td>C</td><td>2</td></tr>
+                                <tr><td>GST 206</td><td>Entrepreneurship Studies II</td><td>C</td><td>2</td></tr>
+                                <tr><td>GST 204</td><td>Peace and Conflict Resolution</td><td>C</td><td>2</td></tr>
+                                <tr><td>GST 208</td><td>Communication in French I</td><td>E</td><td>1</td></tr>
+                                <tr><td>GST 212</td><td>Philosophy, Logic and Human Existence</td><td>C</td><td>2</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="ccmas-200-elective" class="semester-content hidden">
+                        <p class="text-gray-600">Electives: GST 208 is listed as an elective in second semester.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Level 300 CCMAS -->
+            <div class="mb-4 border rounded-lg overflow-hidden">
+                <button onclick="toggleLevel('ccmas-300')" class="level-accordion w-full text-left p-4 bg-blue-100 hover:bg-blue-200 font-bold text-lg flex justify-between items-center">
+                    <span><i class="fas fa-chevron-down mr-2" id="icon-ccmas-300"></i> 300 Level (CCMAS)</span>
+                </button>
+                <div id="ccmas-300" class="hidden p-4 bg-white">
+                    <div class="flex space-x-2 mb-4">
+                        <button onclick="showSemester('ccmas-300-first', this)" class="semester-tab px-4 py-2 bg-gray-200 rounded-full text-sm font-medium semester-tab-active" data-level="ccmas-300">First Semester</button>
+                        <button onclick="showSemester('ccmas-300-second', this)" class="semester-tab px-4 py-2 bg-gray-200 rounded-full text-sm font-medium" data-level="ccmas-300">Second Semester</button>
+                        <button onclick="showSemester('ccmas-300-elective', this)" class="semester-tab px-4 py-2 bg-gray-200 rounded-full text-sm font-medium" data-level="ccmas-300">Electives</button>
+                    </div>
+                    <div id="ccmas-300-first" class="semester-content">
+                        <table class="w-full">
+                            <thead><tr><th>Code</th><th>Course Title</th><th>Status</th><th>Units</th></tr></thead>
+                            <tbody>
+                                <tr><td>CLU-CYB 311</td><td>Soft Computing</td><td>C</td><td>3</td></tr>
+                                <tr><td>CLU-CYB 317</td><td>Android Security</td><td>C</td><td>3</td></tr>
+                                <tr><td>CLU-CVB 323</td><td>Big Data</td><td>C</td><td>3</td></tr>
+                                <tr><td>CYB 301</td><td>Cryptography Techniques, Algorithms and Applications</td><td>C</td><td>2</td></tr>
+                                <tr><td>CYB 303</td><td>Cybersecurity Risks Analysis, Challenges and Mitigation</td><td>C</td><td>2</td></tr>
+                                <tr><td>CYB 305</td><td>Digital Forensics and Investigation Methods</td><td>C</td><td>2</td></tr>
+                                <tr><td>CYB 307</td><td>Information and Big Data Security</td><td>C</td><td>2</td></tr>
+                                <tr><td>CSC 309</td><td>Artificial Intelligence</td><td>C</td><td>2</td></tr>
+                                <tr><td>ENT 301</td><td>Entrepreneurship Studies III</td><td>C</td><td>2</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="ccmas-300-second" class="semester-content hidden">
+                        <table class="w-full">
+                            <thead><tr><th>Code</th><th>Course Title</th><th>Status</th><th>Units</th></tr></thead>
+                            <tbody>
+                                <tr><td>CYB 399</td><td>SIWES</td><td>C</td><td>6</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="ccmas-300-elective" class="semester-content hidden">
+                        <p class="text-gray-600">No electives listed for 300 level in CCMAS.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Level 400 CCMAS -->
+            <div class="mb-4 border rounded-lg overflow-hidden">
+                <button onclick="toggleLevel('ccmas-400')" class="level-accordion w-full text-left p-4 bg-blue-100 hover:bg-blue-200 font-bold text-lg flex justify-between items-center">
+                    <span><i class="fas fa-chevron-down mr-2" id="icon-ccmas-400"></i> 400 Level (CCMAS)</span>
+                </button>
+                <div id="ccmas-400" class="hidden p-4 bg-white">
+                    <div class="flex space-x-2 mb-4">
+                        <button onclick="showSemester('ccmas-400-first', this)" class="semester-tab px-4 py-2 bg-gray-200 rounded-full text-sm font-medium semester-tab-active" data-level="ccmas-400">First Semester</button>
+                        <button onclick="showSemester('ccmas-400-second', this)" class="semester-tab px-4 py-2 bg-gray-200 rounded-full text-sm font-medium" data-level="ccmas-400">Second Semester</button>
+                        <button onclick="showSemester('ccmas-400-elective', this)" class="semester-tab px-4 py-2 bg-gray-200 rounded-full text-sm font-medium" data-level="ccmas-400">Electives</button>
+                    </div>
+                    <div id="ccmas-400-first" class="semester-content">
+                        <table class="w-full">
+                            <thead><tr><th>Code</th><th>Course Title</th><th>Status</th><th>Units</th></tr></thead>
+                            <tbody>
+                                <tr><td>CLU-CYB 417</td><td>Information Disaster Recovery</td><td>C</td><td>3</td></tr>
+                                <tr><td>CLU-CYB 421</td><td>Cloud Ownership and Reliability</td><td>C</td><td>3</td></tr>
+                                <tr><td>CLU-CYB 423</td><td>Fault Tolerant Computing</td><td>C</td><td>3</td></tr>
+                                <tr><td>COS 409</td><td>Research Methodology and Technical Report Writing</td><td>C</td><td>3</td></tr>
+                                <tr><td>CYB 401</td><td>Systems Vulnerability Assessment and Testing</td><td>C</td><td>2</td></tr>
+                                <tr><td>CYB 403</td><td>Cyber Threat Intelligence and Cyber Conflict</td><td>C</td><td>2</td></tr>
+                                <tr><td>CYB 405</td><td>Ethical Hacking and Reverse Engineering</td><td>C</td><td>2</td></tr>
+                                <tr><td>CYB 407</td><td>Cybersecurity Innovation and New Technologies</td><td>C</td><td>2</td></tr>
+                                <tr><td>LDS 401</td><td>Leadership Studies</td><td>C</td><td>1</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="ccmas-400-second" class="semester-content hidden">
+                        <table class="w-full">
+                            <thead><tr><th>Code</th><th>Course Title</th><th>Status</th><th>Units</th></tr></thead>
+                            <tbody>
+                                <tr><td>CYB 402</td><td>Steganography: Access Methods and Data Hiding</td><td>C</td><td>2</td></tr>
+                                <tr><td>CYB 404</td><td>Cloud Computing Security</td><td>C</td><td>2</td></tr>
+                                <tr><td>CYB 406</td><td>Deep and Dark Web Security</td><td>C</td><td>2</td></tr>
+                                <tr><td>CYB 498</td><td>Final Year Project</td><td>C</td><td>6</td></tr>
+                                <tr><td>GST 308</td><td>Communication in French II</td><td>C</td><td>1</td></tr>
+                                <tr><td>ENT 302</td><td>Entrepreneurship Skills</td><td>C</td><td>2</td></tr>
+                                <tr><td>ENT 312</td><td>Venture Creation</td><td>C</td><td>2</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="ccmas-400-elective" class="semester-content hidden">
+                        <p class="text-gray-600">No separate electives listed; all courses are core.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white text-xl font-bold mb-4">Chrisland University</h3>
+                    <p class="text-sm">Abeokuta, Ogun State, Nigeria</p>
+                    <p class="text-sm mt-2">Email:info@chrislanduniversity.edu.ng </p>
+                    <p class="text-sm">Phone: +234 813 576 2586</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-cyan-400">Home</a></li>
+                        <li><a href="courses.html" class="hover:text-cyan-400">Courses</a></li>
+                        <li><a href="about.html" class="hover:text-cyan-400">About</a></li>
+                        <li><a href="policies.html" class="hover:text-cyan-400">Policies</a></li>
+                        <li><a href="contact.html" class="hover:text-cyan-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Programmes</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-cyan-400">Cyber Security (B.Sc.)</a></li>
+                        <li><a href="#" class="hover:text-cyan-400">Computer Science</a></li>
+                        <li><a href="#" class="hover:text-cyan-400">Software Engineering</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-cyan-400"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-2xl hover:text-cyan-400"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-2xl hover:text-cyan-400"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-2xl hover:text-cyan-400"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+                <p>&copy; 2025 Chrisland University. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        // Switch between BMAS and CCMAS curricula
+        function switchCurriculum(type) {
+            // Hide both curricula
+            document.getElementById('bmas-curriculum').classList.add('hidden');
+            document.getElementById('ccmas-curriculum').classList.add('hidden');
+            // Remove active class from both tabs
+            document.getElementById('tab-bmas').classList.remove('curriculum-tab-active');
+            document.getElementById('tab-ccmas').classList.remove('curriculum-tab-active');
+            // Show selected and set active tab
+            if (type === 'bmas') {
+                document.getElementById('bmas-curriculum').classList.remove('hidden');
+                document.getElementById('tab-bmas').classList.add('curriculum-tab-active');
+            } else {
+                document.getElementById('ccmas-curriculum').classList.remove('hidden');
+                document.getElementById('tab-ccmas').classList.add('curriculum-tab-active');
+            }
+        }
+
+        // Toggle level accordion (show/hide)
+        function toggleLevel(levelId) {
+            const content = document.getElementById(levelId);
+            const icon = document.getElementById('icon-' + levelId);
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.remove('fa-chevron-right');
+                icon.classList.add('fa-chevron-down');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-right');
+            }
+        }
+
+        // Show selected semester tab within a level
+        function showSemester(semesterId, clickedButton) {
+            // Get the parent level container
+            const levelDiv = clickedButton.closest('.p-4');
+            // Find all semester content divs inside this level
+            const contents = levelDiv.querySelectorAll('.semester-content');
+            contents.forEach(c => c.classList.add('hidden'));
+            // Show the selected one
+            document.getElementById(semesterId).classList.remove('hidden');
+            // Update active state on semester tabs
+            const tabs = levelDiv.querySelectorAll('.semester-tab');
+            tabs.forEach(t => t.classList.remove('semester-tab-active'));
+            clickedButton.classList.add('semester-tab-active');
+        }
+
+        // Ensure first semester is active when level opens (but we set default in HTML)
+        // Also default to BMAS active
+        window.onload = function() {
+            // Ensure BMAS is visible and its tab active
+            document.getElementById('bmas-curriculum').classList.remove('hidden');
+            document.getElementById('ccmas-curriculum').classList.add('hidden');
+            document.getElementById('tab-bmas').classList.add('curriculum-tab-active');
+            document.getElementById('tab-ccmas').classList.remove('curriculum-tab-active');
+        };
+    </script>
+</body>
+</html>

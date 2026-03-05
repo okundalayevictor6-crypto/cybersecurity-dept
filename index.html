@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrisland University | Cyber Security</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <!-- Header with Logo -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <!-- Logo placeholder - replace with actual image -->
+                <div class="w-12 h-12 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                <img src="image/cu-logo.png" alt="">
+                </div>
+               
+                <div>
+                    <span class="text-2xl font-extrabold text-blue-900">Chrisland <span class="text-cyan-600">University</span></span>
+                    <span class="block text-xs text-gray-500">Abeokuta, Nigeria</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-gray-700 font-medium">
+                <a href="index.html" class="text-cyan-600 border-b-2 border-cyan-600 pb-1">Home</a>
+                <a href="courses.html" class="hover:text-cyan-600">Courses</a>
+                <a href="about.html" class="hover:text-cyan-600">About</a>
+                <a href="policies.html" class="hover:text-cyan-600">Policies</a>
+                <a href="contact.html" class="hover:text-cyan-600">Contact</a>
+            </nav>
+            <button class="md:hidden text-2xl" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 py-4 shadow-lg">
+            <a href="index.html" class="block py-2 text-cyan-600">Home</a>
+            <a href="courses.html" class="block py-2 hover:text-cyan-600">Courses</a>
+            <a href="about.html" class="block py-2 hover:text-cyan-600">About</a>
+            <a href="policies.html" class="block py-2 hover:text-cyan-600">Policies</a>
+            <a href="contact.html" class="block py-2 hover:text-cyan-600">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4">Department of Computer Sciences</h1>
+            <p class="text-2xl md:text-3xl mb-8">B.Sc. Cyber Security</p>
+            <p class="text-xl max-w-3xl mx-auto mb-10">"To be the leading Department in Research and Teaching towards the economic and developmental growth of the nation through ICT."</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="courses.html" class="bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-3 rounded-full font-semibold transition">Explore Programmes</a>
+                <a href="about.html" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-full font-semibold transition">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="stat-card p-6 bg-gray-50 rounded-lg shadow">
+                    <div class="text-4xl text-cyan-600 mb-2"><i class="fas fa-users"></i></div>
+                    <div class="text-3xl font-bold text-blue-900">100+</div>
+                    <div class="text-gray-600">Students</div>
+                </div>
+                <div class="stat-card p-6 bg-gray-50 rounded-lg shadow">
+                    <div class="text-4xl text-cyan-600 mb-2"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div class="text-3xl font-bold text-blue-900">15+</div>
+                    <div class="text-gray-600">Faculty</div>
+                </div>
+                <div class="stat-card p-6 bg-gray-50 rounded-lg shadow">
+                    <div class="text-4xl text-cyan-600 mb-2"><i class="fas fa-book-open"></i></div>
+                    <div class="text-3xl font-bold text-blue-900">15+</div>
+                    <div class="text-gray-600">Courses</div>
+                </div>
+                <div class="stat-card p-6 bg-gray-50 rounded-lg shadow">
+                    <div class="text-4xl text-cyan-600 mb-2"><i class="fas fa-award"></i></div>
+                    <div class="text-3xl font-bold text-blue-900">100%</div>
+                    <div class="text-gray-600">Accredited</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Message -->
+    <section class="py-16 container mx-auto px-6">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">Welcome to <span class="text-cyan-600">Cyber Security</span></h2>
+                <p class="text-lg text-gray-700 mb-4">Chrisland University offers a world-class Cyber Security programme designed to equip students with the knowledge and skills to protect digital assets and critical infrastructure. Our curriculum is aligned with NUC benchmarks and global standards.</p>
+                <p class="text-lg text-gray-700">Join us to become a leader in the fight against cyber threats.</p>
+                <a href="about.html" class="inline-block mt-6 bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition">Read More</a>
+            </div>
+            <div class="md:w-1/2">
+                <img src="image/home.jpeg" alt="Students" class="rounded-lg shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Events -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Latest News & Events</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-cyan-700 flex items-center justify-center text-white text-4xl"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="p-6">
+                        <p class="text-sm text-cyan-600 mb-2">January 16, 2026</p>
+                        <h3 class="text-xl font-bold mb-2">Cyber Security Workshop</h3>
+                        <p class="text-gray-600">Hands-on training on ethical hacking and vulnerability assessment.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-cyan-700 flex items-center justify-center text-white text-4xl"><i class="fas fa-user-graduate"></i></div>
+                    <div class="p-6">
+                        <p class="text-sm text-cyan-600 mb-2">February 19, 2026</p>
+                        <h3 class="text-xl font-bold mb-2">Matriculation Ceremony</h3>
+                        <p class="text-gray-600">Formal admission of fresh students into the university.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-cyan-700 flex items-center justify-center text-white text-4xl"><i class="fas fa-laptop-code"></i></div>
+                    <div class="p-6">
+                        <p class="text-sm text-cyan-600 mb-2">March 2, 2026</p>
+                        <h3 class="text-xl font-bold mb-2">Industry Guest Lecture</h3>
+                        <p class="text-gray-600">Cybersecurity trends and career opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials - Updated with picture borders -->
+    <section class="py-16 container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">What Our Students Say</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card bg-white p-6 rounded-lg shadow-lg">
+                <div class="flex items-center mb-4">
+                    <!-- Student picture with border -->
+                    <div class="w-16 h-16 rounded-full overflow-hidden border-4 border-cyan-600 shadow-md mr-4">
+                        <!-- Replace with actual student photo -->
+                        <img src="image/ayoola 2.jpeg" alt="Oluwaseun A." class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">Okundalaye Victor</h4>
+                        <p class="text-sm text-gray-500">400 Level</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 italic">"The Cyber Security programme at Chrisland University gave me hands-on experience in digital forensics and ethical hacking. The lecturers are top-notch."</p>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card bg-white p-6 rounded-lg shadow-lg">
+                <div class="flex items-center mb-4">
+                    <!-- Student picture with border -->
+                    <div class="w-16 h-16 rounded-full overflow-hidden border-4 border-cyan-600 shadow-md mr-4">
+                        <!-- Replace with actual student photo -->
+                        <img src="image/joseph lab.jpeg" alt="Chidinma E." class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">Joseph Olawoyin</h4>
+                        <p class="text-sm text-gray-500">Graduate 2024</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 italic">"I secured a job as a security analyst immediately after graduation, thanks to the industry-relevant curriculum and SIWES programme."</p>
+            </div>
+            <!-- Optional third testimonial to fill out the grid -->
+            <div class="testimonial-card bg-white p-6 rounded-lg shadow-lg md:col-span-2 md:w-1/2 md:mx-auto">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 rounded-full overflow-hidden border-4 border-cyan-600 shadow-md mr-4">
+                        <img src="image/ayoola 1 .jpeg" alt="Michael O." class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">Idunuoluwa Adebambo</h4>
+                        <p class="text-sm text-gray-500">400 Level</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 italic">"The labs are well-equipped and the practical sessions prepared me for real-world challenges. I highly recommend this programme."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-blue-900 text-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready to Secure the Digital World?</h2>
+            <p class="text-xl mb-8">Apply now and join the next generation of cyber defenders.</p>
+            <a href="contact.html" class="bg-cyan-600 hover:bg-cyan-700 text-white px-10 py-4 rounded-full font-bold text-lg transition shadow-xl">Enquire Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white text-xl font-bold mb-4">Chrisland University</h3>
+                    <p class="text-sm">Abeokuta, Ogun State, Nigeria</p>
+                    <p class="text-sm mt-2">Email: info@chrislanduniversity.edu.ng</p>
+                    <p class="text-sm">Phone: +234 813 576 2586</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-cyan-400">Home</a></li>
+                        <li><a href="courses.html" class="hover:text-cyan-400">Courses</a></li>
+                        <li><a href="about.html" class="hover:text-cyan-400">About</a></li>
+                        <li><a href="policies.html" class="hover:text-cyan-400">Policies</a></li>
+                        <li><a href="contact.html" class="hover:text-cyan-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Programmes</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-cyan-400">Cyber Security (B.Sc.)</a></li>
+                        <li><a href="#" class="hover:text-cyan-400">Computer Science</a></li>
+                        <li><a href="#" class="hover:text-cyan-400">Software Engineering</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-cyan-400"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-2xl hover:text-cyan-400"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-2xl hover:text-cyan-400"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-2xl hover:text-cyan-400"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+                <p>&copy; 2025 Chrisland University. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

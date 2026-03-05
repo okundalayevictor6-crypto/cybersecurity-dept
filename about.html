@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Cyber Security</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header (same) -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12  rounded-full flex items-center justify-center text-white text-xl font-bold"><img src="image/cu-logo.png" alt=""></div>
+                <div>
+                    <span class="text-2xl font-extrabold text-blue-900">Chrisland <span class="text-cyan-600">University</span></span>
+                    <span class="block text-xs text-gray-500">Abeokuta, Nigeria</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-gray-700 font-medium">
+                <a href="index.html" class="hover:text-cyan-600">Home</a>
+                <a href="courses.html" class="hover:text-cyan-600">Courses</a>
+                <a href="about.html" class="text-cyan-600 border-b-2 border-cyan-600 pb-1">About</a>
+                <a href="policies.html" class="hover:text-cyan-600">Policies</a>
+                <a href="contact.html" class="hover:text-cyan-600">Contact</a>
+            </nav>
+            <button class="md:hidden text-2xl" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 py-4 shadow-lg">
+            <a href="index.html" class="block py-2 hover:text-cyan-600">Home</a>
+            <a href="courses.html" class="block py-2 hover:text-cyan-600">Courses</a>
+            <a href="about.html" class="block py-2 text-cyan-600">About</a>
+            <a href="policies.html" class="block py-2 hover:text-cyan-600">Policies</a>
+            <a href="contact.html" class="block py-2 hover:text-cyan-600">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <!-- Hero -->
+        <div class="text-center mb-16">
+            <h1 class="text-5xl font-bold text-blue-900 mb-4">About the <span class="text-cyan-600">Department</span></h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">A brief history, our philosophy, and what makes our Cyber Security programme unique.</p>
+        </div>
+
+        <!-- History -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-blue-900 mb-6 flex items-center"><i class="fas fa-history text-cyan-600 mr-3"></i>Our History</h2>
+            <p class="text-lg text-gray-700 mb-4">The Cyber Security programme was established in 2015 as an arm of the Department of Physical Sciences at Chrisland University. Over the years, it has evolved into a distinct programme within the Department of Computer Sciences, producing highly trained students in the field of Cyber Security. The curriculum meets the National Universities Commission (NUC) Benchmark for Minimum Academic Standards and complies with global requirements for a degree in Cyber Security.</p>
+            <p class="text-lg text-gray-700">Staff members are at the forefront of computer research, enabling the department to train quality students who occupy various positions in banks, industries, academia, and private companies.</p>
+        </section>
+
+        <!-- Philosophy & Objectives -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-blue-900 mb-6 flex items-center"><i class="fas fa-bullseye text-cyan-600 mr-3"></i>Philosophy & Objectives</h2>
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <p class="text-lg font-semibold text-blue-900 mb-4">Philosophy:</p>
+                <p class="text-gray-700 mb-6">To evolve a broad strategy for human resource development that encompasses educational, cultural, social and political development such that graduates can possess the unique cyber security ability to protect digital assets, guard critical infrastructure, and business ecosystems.</p>
+                <p class="text-lg font-semibold text-blue-900 mb-4">Aim:</p>
+                <p class="text-gray-700 mb-6">To build capacity and develop human capital in the field of cyber security, and to safeguard business transactions as well as corporate assets nationally and globally.</p>
+                <p class="text-lg font-semibold text-blue-900 mb-4">Specific Objectives:</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Provide students with a broad and balanced foundation of Cyber Security knowledge and practical skills.</li>
+                    <li>Stimulate sustained interest and enthusiasm in Cyber Security and its applications.</li>
+                    <li>Train students in necessary computing knowledge and skills to provide effective computing service to industries, banking, and other sectors.</li>
+                    <li>Produce professionally trained and skilled manpower to develop internationally acceptable software applications.</li>
+                    <li>Provide basic networks and hardware knowledge needed for modern ICT practice.</li>
+                    <li>Train students with a solid foundation for postgraduate studies and research.</li>
+                    <li>Inculcate a culture of focused and continuous skills for carrying out research.</li>
+                    <li>Develop transferable skills applicable to all aspects of human endeavour.</li>
+                    <li>Prepare students for self-employment and job placements in government and industry.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Vision & Mission -->
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-cyan-600">
+                <h3 class="text-2xl font-bold text-blue-900 mb-3"><i class="fas fa-eye text-cyan-600 mr-2"></i> Vision</h3>
+                <p class="text-gray-700">To be the leading program in Research and Teaching towards the Economic Growth of the Nation through ICT.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-cyan-600">
+                <h3 class="text-2xl font-bold text-blue-900 mb-3"><i class="fas fa-rocket text-cyan-600 mr-2"></i> Mission</h3>
+                <p class="text-gray-700">Stimulate sustained interest and enthusiasm in Cyber security; train students with necessary computing knowledge and skills; provide solid foundation for postgraduate studies; conduct research to advance the state of the art.</p>
+            </div>
+        </div>
+
+        <!-- Admission & Graduation -->
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold text-blue-900 mb-4"><i class="fas fa-door-open text-cyan-600 mr-2"></i> Admission Requirements</h3>
+                <p class="font-semibold">UTME Entry:</p>
+                <p class="mb-4">Five ‘O’ Level credit passes in English, Mathematics, Physics, Chemistry, and any other science subject. UTME subjects: Mathematics, Physics, Chemistry.</p>
+                <p class="font-semibold">Direct Entry:</p>
+                <p>NCE in Cyber Security with relevant subjects or two ‘A’ Level passes in Physics and Mathematics or Chemistry. OND/NCE (minimum upper credit) may be considered for 200 level.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold text-blue-900 mb-4"><i class="fas fa-certificate text-cyan-600 mr-2"></i> Graduation Requirements</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>All registered courses must be passed.</li>
+                    <li>All compulsory courses taken and passed.</li>
+                    <li>All GST courses passed.</li>
+                    <li>Minimum total units: 144 (UTME) / 108 (Direct Entry).</li>
+                    <li>CGPA of at least 1.50.</li>
+                    <li>Found worthy in character.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- HOD Message with Picture -->
+        <section class="bg-gradient-to-r from-blue-50 to-cyan-50 p-8 rounded-3xl shadow-inner mb-16">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="flex-shrink-0">
+                    <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                        <!-- Replace with actual HOD photo -->
+                        <img src="image/HOD 2.jpeg" alt="Head of Department" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div>
+                    <i class="fas fa-quote-left text-4xl text-cyan-600 opacity-30 mb-2"></i>
+                    <p class="text-xl italic text-gray-700">"This handbook is an indispensable tool for your academic pursuit. The staff welcome all students and wish them a successful and productive stay."</p>
+                    <p class="text-right font-bold text-blue-900 mt-4">– Prof. Isaac A. Odun‑Ayo, Head of Department (Jan 2023)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accreditation & Facilities -->
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold text-blue-900 mb-4"><i class="fas fa-award text-cyan-600 mr-2"></i> Accreditation</h3>
+                <p class="text-gray-700">The Cyber Security programme is fully accredited by the National Universities Commission (NUC) and meets global standards for a Bachelor's degree.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold text-blue-900 mb-4"><i class="fas fa-flask text-cyan-600 mr-2"></i> Facilities</h3>
+                <p class="text-gray-700">State-of-the-art computer laboratories, cybersecurity simulation labs, dedicated servers, and high-speed internet access for hands-on training.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (same) -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white text-xl font-bold mb-4">Chrisland University</h3>
+                    <p class="text-sm">Abeokuta, Ogun State, Nigeria</p>
+                    <p class="text-sm mt-2">Email: info@chrislanduniversity.edu.ng</p>
+                    <p class="text-sm">Phone: +234 813 576 2586</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-cyan-400">Home</a></li>
+                        <li><a href="courses.html" class="hover:text-cyan-400">Courses</a></li>
+                        <li><a href="about.html" class="hover:text-cyan-400">About</a></li>
+                        <li><a href="policies.html" class="hover:text-cyan-400">Policies</a></li>
+                        <li><a href="contact.html" class="hover:text-cyan-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Programmes</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-cyan-400">Cyber Security (B.Sc.)</a></li>
+                        <li><a href="#" class="hover:text-cyan-400">Computer Science</a></li>
+                        <li><a href="#" class="hover:text-cyan-400">Software Engineering</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-cyan-400"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-2xl hover:text-cyan-400"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-2xl hover:text-cyan-400"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-2xl hover:text-cyan-400"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+                <p>&copy; 2025 Chrisland University. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
