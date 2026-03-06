@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Cyber Security</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom transition for gallery images */
+        .gallery-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .overlay {
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <!-- Header with Logo (updated to include Gallery link) -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <!-- Logo placeholder - replace with actual image -->
+                <div class="w-12 h-12 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                     <img src="image/cu-logo.png" alt="">
+                </div>
+                <div>
+                    <span class="text-2xl font-extrabold text-blue-900">Chrisland <span class="text-cyan-600">University</span></span>
+                    <span class="block text-xs text-gray-500">Abeokuta, Nigeria</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-gray-700 font-medium">
+                <a href="index.html" class="hover:text-cyan-600">Home</a>
+                <a href="courses.html" class="hover:text-cyan-600">Courses</a>
+                <a href="about.html" class="hover:text-cyan-600">About</a>
+                <a href="policies.html" class="hover:text-cyan-600">Policies</a>
+                <a href="gallery.html" class="text-cyan-600 border-b-2 border-cyan-600 pb-1">Gallery</a>
+                <a href="contact.html" class="hover:text-cyan-600">Contact</a>
+            </nav>
+            <button class="md:hidden text-2xl" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 py-4 shadow-lg">
+            <a href="index.html" class="block py-2 hover:text-cyan-600">Home</a>
+            <a href="courses.html" class="block py-2 hover:text-cyan-600">Courses</a>
+            <a href="about.html" class="block py-2 hover:text-cyan-600">About</a>
+            <a href="policies.html" class="block py-2 hover:text-cyan-600">Policies</a>
+            <a href="gallery.html" class="block py-2 text-cyan-600">Gallery</a>
+            <a href="contact.html" class="block py-2 hover:text-cyan-600">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-900 to-cyan-700 text-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Gallery</h1>
+            <p class="text-xl max-w-2xl mx-auto">A glimpse into the Cyber Security programme, our labs, events, and student life.</p>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="py-16 container mx-auto px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Image 1 -->
+            <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg">
+                <img src="image/ayoola 3.jpeg" alt="Cyber Security Lab" class="w-full h-64 object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <p class="text-white font-semibold">Cyber Security Lab</p>
+                </div>
+            </div>
+            <!-- Image 2 -->
+            <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg">
+                <img src="image/ayoola 4.jpeg" alt="Students Coding" class="w-full h-64 object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <p class="text-white font-semibold"></p>
+                </div>
+            </div>
+            <!-- Image 3 -->
+            <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg">
+                <img src="image/ayoola 5.jpeg" alt="Server Room" class="w-full h-64 object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <p class="text-white font-semibold"></p>
+                </div>
+            </div>
+            <!-- Image 4 -->
+            <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg">
+                <img src="image/ayoola 6.jpeg" alt="Tech Workshop" class="w-full h-64 object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <p class="text-white font-semibold"></p>
+                </div>
+            </div>
+            <!-- Image 5 -->
+            <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg">
+                <img src="image/home.jpeg" alt="Digital Forensics" class="w-full h-64 object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <p class="text-white font-semibold"></p>
+                </div>
+            </div>
+            <!-- Image 6 -->
+            <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg">
+                <img src="image/lab 12.jpeg" alt="Network Setup" class="w-full h-64 object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <p class="text-white font-semibold"></p>
+                </div>
+            </div>
+            <!-- Image 7 -->
+            <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg">
+                <img src="image/computer lab 2.jpg" alt="Coding Session" class="w-full h-64 object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <p class="text-white font-semibold"></p>
+                </div>
+            </div>
+            <!-- Image 8 -->
+            <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg">
+                <img src="image/computer lab 3.jpg" alt="Cybersecurity Conference" class="w-full h-64 object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <p class="text-white font-semibold"></p>
+                </div>
+            </div>
+            <!-- Image 9 -->
+            <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg">
+                <img src="image/lab 8.jpeg" alt="Library Study" class="w-full h-64 object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <p class="text-white font-semibold"></p>
+                </div>
+            </div>
+            <!-- Image 10 -->
+            <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg">
+                <img src="image/lab 5.jpeg" alt="Group Project" class="w-full h-64 object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <p class="text-white font-semibold"></p>
+                </div>
+            </div>
+            <!-- Image 11 -->
+            <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg">
+                <img src="image/lab 6.jpeg" alt="Lecture Hall" class="w-full h-64 object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <p class="text-white font-semibold"></p>
+                </div>
+            </div>
+            <!-- Image 12 -->
+            <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg">
+                <img src="image/lab 7.jpeg" alt="Student Lounge" class="w-full h-64 object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <p class="text-white font-semibold"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white text-xl font-bold mb-4">Chrisland University</h3>
+                    <p class="text-sm">Abeokuta, Ogun State, Nigeria</p>
+                    <p class="text-sm mt-2">Email: info@chrislanduniversity.edu.ng</p>
+                    <p class="text-sm">Phone: +234 813 576 2586</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-cyan-400">Home</a></li>
+                        <li><a href="courses.html" class="hover:text-cyan-400">Courses</a></li>
+                        <li><a href="about.html" class="hover:text-cyan-400">About</a></li>
+                        <li><a href="policies.html" class="hover:text-cyan-400">Policies</a></li>
+                        <li><a href="gallery.html" class="hover:text-cyan-400">Gallery</a></li>
+                        <li><a href="contact.html" class="hover:text-cyan-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Programmes</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-cyan-400">Cyber Security (B.Sc.)</a></li>
+                        <li><a href="#" class="hover:text-cyan-400">Computer Science</a></li>
+                        <li><a href="#" class="hover:text-cyan-400">Software Engineering</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-cyan-400"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-2xl hover:text-cyan-400"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-2xl hover:text-cyan-400"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-2xl hover:text-cyan-400"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+                <p>&copy; 2025 Chrisland University. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
